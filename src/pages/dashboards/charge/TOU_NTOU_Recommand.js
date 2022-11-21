@@ -5,11 +5,11 @@ import {Card, CardBody, Button, Table, Progress, UncontrolledAlert} from 'reacts
 const Channels = () => {
  const apexBarChartData = [{
         name : '누진제',
-        fee:"367,076.9812789953"
+        fee:"367,076 ₩"
     },
     {
         name : 'TOU',
-        fee:"199,432.91492199787"
+        fee:"199,432 ₩"
     }]
     const [jsonData] = useState(apexBarChartData)
 

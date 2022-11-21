@@ -93,11 +93,11 @@ const RevenueChart = () => {
     // ];
     const apexBarChartData = [{
         name : '보간된 TOU 요금제',
-        fee:"199432.91492199787"
+        fee:"199,432 ₩"
     },
     {
         name : '누락된 TOU 요금제',
-        fee:"118041.1087999999"
+        fee:"118,041 ₩"
     }]
 
     const [jsonData] = useState(apexBarChartData)

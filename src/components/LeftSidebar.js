@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import SimpleBar from 'simplebar-react';
 
 import logoSm from '../assets/images/logo_sm.png';
-import logoDark from '../assets/images/logo-dark.png';
-import logoDarkSm from '../assets/images/logo_sm_dark.png';
+import logoDark from '../assets/images/Newton_logo.png';
+import logoDarkSm from '../assets/images/Newton_logo.png';
 import logo from '../assets/images/Newton_logo.png';
 import helpBoxImage from '../assets/images/help-icon.svg';
 import profileImg from '../assets/images/users/avatar-1.jpg';
@@ -112,7 +112,7 @@ class LeftSidebar extends Component<LeftSidebarProps> {
 
                         <Link to="/" className="logo text-center logo-dark">
                             <span className="logo-lg">
-                                <img src={isLight ? logoDark : logo} alt="logo" height="16" />
+                                <img src={isLight ? logoDark : logo} alt="logo" height="140" />
                             </span>
                             <span className="logo-sm">
                                 <img src={isLight ? logoSm : logoDarkSm} alt="logo" height="16" />
