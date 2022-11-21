@@ -5,7 +5,7 @@ import { Redirect, Link } from 'react-router-dom';
 import { Container, Row, Col, Card, CardBody } from 'reactstrap';
 
 import { isUserAuthenticated } from '../../helpers/authUtils';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/sample_logo.png';
 import emailImg from '../../assets/images/mail_sent.svg';
 
 class Confirm extends Component {

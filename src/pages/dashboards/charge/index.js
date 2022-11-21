@@ -1,9 +1,9 @@
 // @flow
 import React from 'react';
 import { Row, Col } from 'reactstrap';
-import SessionsChart from './SessionsChart';
-import Channels from './Channels';
-import PerformanceChart from "../home/PerformanceChart";
+import TOU_NTOU_Recommand from './TOU_NTOU_Recommand';
+import PerformanceChart from "../home";
+import Month_Used from './Month_Used.js';
 
 
 const AnalyticsDashboardPage = () => {
@@ -14,25 +14,31 @@ const AnalyticsDashboardPage = () => {
                     <div className="page-title-box">
                         <div className="page-title-right">
                         </div>
-                        <h4 className="page-title">요금제 비교 서비스</h4>
+                        <h4 className="page-title">전력 소모량 예측</h4>
                     </div>
                 </Col>
             </Row>
 
-            <Row>
+            {/* <Row>
                 <Col xl={12}>
                     <SessionsChart />
                 </Col>
+            </Row> */}
+            <Row>
+                 <Col xl={12}>
+                    <Month_Used />
+                </Col>
             </Row>
 
-            <Row>
+            {/* <Row>
                 <Col xl={12}>
                     <PerformanceChart />
                 </Col>
-            </Row>
+            </Row> */}
+            
             <Row>
                 <Col xl={12}>
-                    <Channels />
+                    <TOU_NTOU_Recommand />
                 </Col>
             </Row>
         </React.Fragment>

@@ -107,20 +107,20 @@ const ProfileMenus = [
 const SearchResults = [
     {
         id: 2,
-        title: '내일의 전력량을 알고 싶을땐?',
+        title: 'TOU요금제 분석 서비스는?',
         icon: 'uil-life-ring',
         redirectTo: '/dashboard/power'
     },
     {
         id: 3,
         icon: 'uil-cog',
-        title: '요금제을 제안받고 싶을땐?',
+        title: '이번달 전력 사용량은?',
         redirectTo: '/dashboard/charge'
     }, {
         id: 4,
         icon: 'uil-user',
-        title: '나의 그린포인트는 얼마나 쌓였을까??',
-        redirectTo: '/dashboard/greenpoint'
+        title: '계약종별로 한눈에 관리하고 싶을땐?',
+        redirectTo: '/dashboard/home'
     }
 ];
 
@@ -187,8 +187,8 @@ class Topbar extends Component<TopbarProps> {
                                 <ProfileDropdown
                                     profilePic={profilePic}
                                     menuItems={ProfileMenus}
-                                    username={'Newton'}
-                                    userTitle={'Energy_Sol'}
+                                    username={'Trust bill'}
+                                    userTitle={'admin'}
                                 />
                             </li>
                         </ul>

@@ -16,19 +16,26 @@ const RevenueChart = () => {
     const apexLineChartWithLables = {
         chart: {
             height: 400,
-            type: 'line',
-            dropShadow: {
-                enabled: true,
-                opacity: 0.1,
-                blur: 7,
-                left: -7,
-                top: 7,
-            },
+            type: 'bar',
+            // dropShadow: {
+            //     enabled: true,
+            //     opacity: 0.1,
+            //     blur: 7,
+            //     left: -7,
+            //     top: 7,
+            // },
+            parentHeightOffset: 0,
+            stacked: true,
             toolbar: {
                 show: false,
             },
-            parentHeightOffset: 0,
-            stacked: true,
+            
+        },
+        plotOptions: {
+            bar: {
+                horizontal: false,
+                columnWidth: '20%',
+            },
         },
         grid: {
             padding: {
@@ -40,8 +47,8 @@ const RevenueChart = () => {
             enabled: false,
         },
         stroke: {
-            curve: 'smooth',
-            width: 10,
+            show: true,
+            width: 2,
         },
         zoom: {
             enabled: false,
@@ -52,7 +59,7 @@ const RevenueChart = () => {
         colors: ['#8ca4d2', '#0acf97', '#fa5c7c', '#ffbc00'],
         xaxis: {
             type: 'string',
-            categories: [],
+            categories: ['1월', '2월', '3월','4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
             tooltip: {
                 enabled: false,
             },
@@ -63,15 +70,16 @@ const RevenueChart = () => {
         yaxis: {
             labels: {
                 formatter: function (val) {
-                    return val + 'kW';
+                    return val + '원';
                 },
             },
         },
+        
     };
 
     let apexLineChartWithLablesData = [{
-        name: '',
-        data: []
+        name: '누락된 요금',
+        data: [31710,21180,11560,9180,16600,24970,35580,47400,29550,22080,31020,41120]
     }]
 
     const [jsonData] = useState(apexLineChartWithLablesData)
@@ -109,14 +117,14 @@ const RevenueChart = () => {
                     </DropdownMenu>
                 </UncontrolledButtonDropdown>
 
-                <h4 className="header-title mb-3">오늘 전력 사용량</h4>
+                <h4 className="header-title mb-3">누락된 요금</h4>
                 <UncontrolledAlert color="info">
-                    실시간으로 고객님의 전력사용량을 보여줍니다.
+                    월별 누락된 요금을 나타냅니다.(Sample Data)
                 </UncontrolledAlert>
                 <Chart
                     options={jsonDatay}
                     series={jsonData}
-                    type="line"
+                    type="bar"
                     className="apex-charts mt-3"
                     height={364}
                 />

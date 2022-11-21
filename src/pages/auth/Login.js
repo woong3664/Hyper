@@ -77,8 +77,7 @@ class Login extends Component {
                                                     Sign In
                                                 </h4>
                                                 <p className="text-muted mb-4">
-                                                    탄소중립을 이끄는 전력관리 서비스!
-                                                    Newton 입니다.
+                                                    전력관리 서비스 TRUST Bill
                                                 </p>
                                             </div>
 

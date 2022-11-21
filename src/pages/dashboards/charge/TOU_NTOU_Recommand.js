@@ -1,41 +1,47 @@
-// @flow
+// TOU, 누진제 중 요금제 추천
 import React, {useEffect, useState} from 'react';
 import {Card, CardBody, Button, Table, Progress, UncontrolledAlert} from 'reactstrap';
+
 const Channels = () => {
  const apexBarChartData = [{
-        name : '누진제'
+        name : '누진제',
+        fee:"367,076.9812789953"
     },
     {
-        name:'TOU'
+        name : 'TOU',
+        fee:"199,432.91492199787"
     }]
     const [jsonData] = useState(apexBarChartData)
 
+    // function getTitle(){
+    //   const response = fetch("https://jsonplaceholder.typicode.com/posts");
+    //   return response.then(res => res.json());
+    // }
+    // async function myfetch(){
+    //  let response = await fetch('http://192.168.1.6:8000/predict/fee');
+    
+    //  let myJson = await response.json()
+    //     jsonData[0].fee = myJson.fee
+    //     jsonData[1].fee = myJson.T_fee
 
+    // }
+    // function test() {
+    //     let example = fetch('http://192.168.1.6:8000/predict/fee').then((res) => {
+    //         let myjson = example.json()
+    //         jsonData[0].fee = myjson.fee
+    //         jsonData[1].fee = myjson.T_fee
+    //     });
+    //   }
 
-    function getTitle(){
-      const response = fetch("https://jsonplaceholder.typicode.com/posts");
-      return response.then(res => res.json());
-    }
-    async function myfetch(){
-     let response = await fetch('http://localhost:5000/tou');
-     let myJson = await response.json()
-        console.log(response)
-        jsonData[0].data = myJson.price[0]
-        jsonData[1].data = myJson.price[1]
-        jsonData.name = '가격'
-        // jsonDatay.xaxis.categories = response.time
-        console.log(jsonData)
-        // console.log(jsonDatay)
-    }
+    // myfetch()
+    // test()
 
-    myfetch()
-
-    const select_name = () =>
+    let select_name = () =>
     {
-        if (jsonData[0].data > jsonData[1].data)
-            return jsonData[0].name
+        if (jsonData[0].fee > jsonData[1].fee)
+            return jsonData[1].fee
         else
-            return jsonData[1].name
+            return jsonData[0].fee
 
     }
     // const compare = () =>
@@ -44,7 +50,6 @@ const Channels = () => {
     //         return jsonData[1].name + "가 "+jsonData[1].data - jsonData[0].data + "만큼 더 저렴합니다."
     //     else
     //         return jsonData[0].name + "가 "+jsonData[1].data - jsonData[0].data + "만큼 더 저렴합니다."
-    //
     // }
     return (
         <Card>
@@ -65,14 +70,14 @@ const Channels = () => {
                     <tbody>
                         <tr>
                             <td>TOU요금제</td>
-                            <td>{jsonData[0].data}</td>
+                            <td>{jsonData[0].fee}</td>
                             <td>
                                 <Progress value={100} style={{ height: '3px'}}/>
                             </td>
                         </tr>
                         <tr>
                             <td>누진제</td>
-                            <td>{jsonData[1].data}</td>
+                            <td>{jsonData[1].fee}</td>
                             <td>
                                 <Progress value={0} style={{ height: '3px'}} color="info"/>
                             </td>

@@ -1,4 +1,4 @@
-// @flow
+// 데이터의 누락의 빈도
 import React, {useEffect} from 'react';
 import Chart from 'react-apexcharts';
 import { Card, CardBody, UncontrolledButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, UncontrolledAlert} from 'reactstrap';
@@ -42,7 +42,7 @@ const PerformanceChart = () => {
         },
         colors: ['#4578a1', 'rgba(205,217,227,0.83)'],
         xaxis: {
-            categories: ['TOU', '누진세'],
+            categories: ['산업용(갑)저압', '입반용(갑)저압', '농사용(을)저압', '농사용(갑)저압', '농사용(갑)', '심야전력(갑)', '주택용전력'],
             axisBorder: {
                 show: false,
             },
@@ -50,7 +50,7 @@ const PerformanceChart = () => {
         yaxis: {
             labels: {
                 formatter: function(val) {
-                    return val + '원';
+                    return val;
                 },
             },
         },
@@ -60,16 +60,33 @@ const PerformanceChart = () => {
         tooltip: {
             y: {
                 formatter: function(val) {
-                    return '' + val + '원';
+                    return '' + val + '개';
                 },
             },
         },
+        annotations: {
+            yaxis: [
+              {
+                y: 2976,
+                borderColor: '#00E396',
+                label: {
+                  borderColor: '#00E396',
+                  style: {
+                    color: '#fff',
+                    background: '#00E396'
+                  },
+                  text: '정상 입력 빈도 수'
+                }
+              }
+            ]
+          }
+        
     };
 
     const apexBarChartData = [
         {
-            name: 'Actual',
-            data: []
+            name: '입력된 데이터',
+            data: [2450.6, 2552.7, 2272.0, 2822.0, 1804.5, 2614.7, 1964.2]
         }
     ];
     const [jsonData] = useState(apexBarChartData)
@@ -93,9 +110,9 @@ const PerformanceChart = () => {
     return (
         <Card>
             <CardBody>
-                <h4 className="header-title mb-3">이번 달 요금제 추천 서비스</h4>
+                <h4 className="header-title mb-3">무손실 데이터의 양</h4>
                 <UncontrolledAlert color="info">
-                    실시간 이번 달 요금을 실시간으로 불러오는 중입니다.
+                    각 항목의 데이터의 빈도를 나타냅니다.
                 </UncontrolledAlert>
                 <Chart
                     options={apexBarChartOpts}

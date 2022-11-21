@@ -10,12 +10,11 @@ import './assets/scss/Saas.scss';
 configureFakeBackend();
 
 
-type AppProps = {};
 
-class App extends Component<AppProps> {
+class App extends Component {
     render() {
         return <Routes></Routes>;
     }
 }
 
-export default App;
+export default App; 

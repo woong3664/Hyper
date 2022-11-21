@@ -54,14 +54,14 @@ const rootRoute = {
 // dashboards
 const dashboardRoutes = {
     path: '/dashboard',
-    name: 'Newton',
+    name: 'EDI',
     icon: 'uil-home-alt',
-    header: 'Navigation',
+    header: '전력예측서비스',
     children: [
 
         {
             path: '/dashboard/home',
-            name: 'Home',
+            name: '관리자',
             badge: {
 
             },
@@ -69,23 +69,24 @@ const dashboardRoutes = {
             route: PrivateRoute,
         },
         {
-            path: '/dashboard/power',
-            name: '전력사용량',
-            component: CRMDashboard,
-            route: PrivateRoute,
-        },
-        {
             path: '/dashboard/charge',
-            name: '요금제',
+            name: '사용자 데이터',
             component: AnalyticsDashboard,
             route: PrivateRoute,
         },
         {
-            path: '/dashboard/greenpoint',
-            name: '그린포인트',
-            component: ProjectDashboard,
+            path: '/dashboard/power',
+            name: '분석 서비스',
+            component: CRMDashboard,
             route: PrivateRoute,
         },
+        
+        // {
+        //     path: '/dashboard/greenpoint',
+        //     name: '다른용도 활용',
+        //     component: ProjectDashboard,
+        //     route: PrivateRoute,
+        // },
     ],
 };
 
